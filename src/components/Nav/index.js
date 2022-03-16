@@ -8,12 +8,6 @@ function Nav(props) {
     currentCategory,
   } = props;
 
-
-  const handleClick = (item) => {
-    console.log(item);
-    return item;
-  };
-
   return (
     <header className="flex-row px-1">
       <h2>
@@ -29,14 +23,14 @@ function Nav(props) {
             </a>
           </li>
           <li className={"mx-2"}>
-            <span onClick={() => handleClick('Contact')}>
+            <span>
               Contact
             </span>
           </li>
           {categories.map((category) => (
             <li
               className={`mx-1 ${
-                currentCategory.name === category.name
+                currentCategory.name === category.name && 'navActive'
                 }`}
               key={category.name}
             >
